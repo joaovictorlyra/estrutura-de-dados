@@ -41,7 +41,7 @@ function Queue() { //funcao
         return items[items.length - 1];
     }
 
-    this.
+    
 }
 
 // QUESTÃO 1:
