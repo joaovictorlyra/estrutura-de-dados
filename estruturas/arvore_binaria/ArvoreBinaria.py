@@ -4,8 +4,10 @@ class Node:
         self.left = None
         self.right = None
 
+
     def __str__(self):
         return str(self.data)
+    
 
 class BinaryTree:
     def __init__(self, data=None, node=None):
@@ -16,6 +18,7 @@ class BinaryTree:
             self.root = node
         else:
             self.root = None
+
 
     # Percurso em ordem simétrica (o correto é "inorder" em inglês)
     def simetric_traversal(self, node=None):
@@ -28,6 +31,20 @@ class BinaryTree:
         if node.right:
             self.simetric_traversal(node.right)
             print(')', end='')
+
+
+    def height(self, node=None):
+        if node is None:
+            node = self.root
+        hleft = 0
+        hright = 0
+        if node.left:
+            hleft = self.height(node.left)
+        if node.right:
+            hright = self.height(node.right)
+        if hright > hleft:
+            return hright + 1
+        return hleft + 1
         
 
 if __name__ == "__main__":
