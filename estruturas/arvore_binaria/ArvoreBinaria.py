@@ -32,6 +32,17 @@ class BinaryTree:
             self.simetric_traversal(node.right)
             print(')', end='')
 
+    
+    def postorder_traversal(self, node=None):
+        if node is None:
+            node = self.root
+        if node.left:
+            self.postorder_traversal(node.left)
+        if node.right:
+            self.postorder_traversal(node.right)
+        print(node)
+        
+
 
     def height(self, node=None):
         if node is None:
@@ -45,7 +56,7 @@ class BinaryTree:
         if hright > hleft:
             return hright + 1
         return hleft + 1
-        
+    
 
 if __name__ == "__main__":
     tree = BinaryTree()
