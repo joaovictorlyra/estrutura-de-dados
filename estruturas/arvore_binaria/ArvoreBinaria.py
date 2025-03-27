@@ -20,7 +20,6 @@ class BinaryTree:
             self.root = None
 
 
-    # Percurso em ordem simétrica (o correto é "inorder" em inglês)
     def inorder(self, node=None):
         if node is None:
             node = self.root
@@ -56,6 +55,25 @@ class BinaryTree:
         if hright > hleft:
             return hright + 1
         return hleft + 1
+
+    def node_degree(self, node):
+        """Returns the degree of a specific node."""
+        degree = 0
+        if node.left:
+            degree += 1
+        if node.right:
+            degree += 1
+        return degree
+
+    def tree_degree(self, node=None):
+        """Returns the degree of the entire tree."""
+        if node is None:
+            node = self.root
+        if node is None:
+            return 0
+        left_degree = self.tree_degree(node.left) if node.left else 0
+        right_degree = self.tree_degree(node.right) if node.right else 0
+        return max(self.node_degree(node), left_degree, right_degree)
     
 
 if __name__ == "__main__":
@@ -80,3 +98,7 @@ if __name__ == "__main__":
 
     tree.inorder()
     print()
+
+    # Example usage of the new methods
+    print("Degree of node n2:", tree.node_degree(n2))
+    print("Degree of the tree:", tree.tree_degree())
