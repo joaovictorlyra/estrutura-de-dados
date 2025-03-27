@@ -42,6 +42,16 @@ class BinaryTree:
         print(node)
         
 
+    def preorder(self, node=None):
+        """Performs a pre-order traversal of the tree."""
+        if node is None:
+            node = self.root
+        print(node, end=' ')
+        if node.left:
+            self.preorder(node.left)
+        if node.right:
+            self.preorder(node.right)
+
 
     def height(self, node=None):
         if node is None:
@@ -102,3 +112,8 @@ if __name__ == "__main__":
     # Example usage of the new methods
     print("Degree of node n2:", tree.node_degree(n2))
     print("Degree of the tree:", tree.tree_degree())
+
+    # Example usage of the new method
+    print("Pre-order traversal:")
+    tree.preorder()
+    print()
