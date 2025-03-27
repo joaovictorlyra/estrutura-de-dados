@@ -21,15 +21,15 @@ class BinaryTree:
 
 
     # Percurso em ordem simétrica (o correto é "inorder" em inglês)
-    def simetric_traversal(self, node=None):
+    def inorder(self, node=None):
         if node is None:
             node = self.root
         if node.left:
             print('(', end='') 
-            self.simetric_traversal(node.left)
+            self.inorder(node.left)
         print(node, end='')
         if node.right:
-            self.simetric_traversal(node.right)
+            self.inorder(node.right)
             print(')', end='')
 
     
@@ -78,5 +78,5 @@ if __name__ == "__main__":
     n5.left = n6
     n5.right = n7
 
-    tree.simetric_traversal()
+    tree.inorder()
     print()
