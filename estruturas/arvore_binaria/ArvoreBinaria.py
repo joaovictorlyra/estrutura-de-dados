@@ -256,7 +256,7 @@ class BinaryTree:
 
 if __name__ == "__main__":
     # LETRA B:
-    # Criando os nós da árvore binária
+    # Criação dos nós e construção da árvore
     tree = BinaryTree()
     n1 = Node('a')
     n2 = Node('+')
@@ -265,9 +265,7 @@ if __name__ == "__main__":
     n5 = Node('-')
     n6 = Node('/')
     n7 = Node('c')
-    n8 = Node('d')
-
-    # Construindo a árvore binária
+ 
     tree.root = n2
     n2.left = n1
     n2.right = n3
@@ -275,4 +273,42 @@ if __name__ == "__main__":
     n3.right = n5
     n5.left = n6
     n5.right = n7
+
+    # Implementação em ordem alfabética:  
+    # Letra C:
+    print("Letra C: o grau do nó '+' é:", tree.node_degree(n2))
+    # Letra D:
+    print("Letra D: o grau máximo da árvore é:", tree.tree_degree())
+    # Letras E e F:
+    print("Letras E e F: ")
+    tree.report_node_depth('b')
+    # Letra G:
+    print("Letra G: informações detalhadas do nó 'b':")
+    tree.detailed_node_info('b')
+    # Letra H:
+    print("Letra H: a altura do nó 'b' é:", tree.node_height(n4))
+    # Letra I:
+    print("Letra I: a altura da árvore é:", tree.tree_height(tree.root))
+    # Letra J:
+    print("Letra J: o nível do nó 'b' é:", tree.node_level(tree.root, n4))
+    # Letra K:
+    print("Letra K: o nível máximo da árvore é:", tree.tree_level(tree.root))
+    # Letra L:
+    print("Letra L: os nós folha da árvore são:", tree.leaf_nodes())
+    # Letra M:
+    print("Letra M: árvore em formato hierárquico:")
+    tree.print_hierarchical()
+    print()
+    # Letra N:
+    print("Letra N: travessia em pré-ordem:")
+    tree.preorder()
+    print()
+    # Letra O:
+    print("Letra O: travessia em pós-ordem:")
+    tree.postorder_traversal()
+    print()
+    # Letra P:
+    print("Letra P: travessia em ordem (inorder):")
+    tree.inorder()
+    print()
 
